@@ -1,0 +1,19 @@
+body, html{
+    height: 100%;
+    margin: 0;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 150px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
