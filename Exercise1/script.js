@@ -14,3 +14,25 @@ function myFunction1(){
     alert("Sum: "+sum);
 }
 
+function create(){
+    let name = prompt("Name of student: ");
+    console.log(name);
+}
+
+function read(){
+    let name = "Name of Student";
+    console.log(name);
+
+}
+
+function update(){
+    let name = "Name to update";
+    console.log(name);
+
+}
+
+function del(){
+    let name = "Name to delete";
+    console.log(name);
+
+}
