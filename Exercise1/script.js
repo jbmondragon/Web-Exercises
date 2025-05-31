@@ -1,38 +1,27 @@
-let users=[];
-let editIndex=-1;
+let users = [];
+let editIndex = -1;
 
+// CREATE or UPDATE
+function create() {
+    let name = prompt("Name of student:");
 
-function myFunction(){
-    document.getElementById("demo").innerHTML = "<h2>I Love Javascript</h2>";
-    //document.write("I still love javascript") Note: This should only be used for testing
-}
-
-function myFunction1(){
-    let a = prompt("Enter value of a: ");
-    let b = prompt("Enter value of b: ");
-
-    let sum = Number(a)+Number(b);
-    console.log(sum);
-
-    //document.getElementById("demo1").innerHTML = "Sum: "+sum;
-    alert("Sum: "+sum);
-}
-
-function create(){
-    let name = prompt("Name of student: ");
-    
-    if(name==""){
+    if (name === "") {
         alert("Name cannot be empty");
         return;
-    }else if(name==-1){
-        users.push(name);
-    }else{
-        users[editIndex] = name;
-        editIndex=-1;
     }
-    console.log(name);
+
+    if (editIndex === -1) {
+        users.push(name); // Create
+    } else {
+        users[editIndex] = name; // Update
+        editIndex = -1;
+    }
+
+    console.log("Updated users list:");
+    //read();
 }
 
+// READ
 function read() {
     if (users.length === 0) {
         console.log("No students available.");
@@ -43,15 +32,31 @@ function read() {
     }
 }
 
+// UPDATE
+function update() {
+    let nameToUpdate = prompt("Enter the current name of the student to update:");
 
-function update(){
-    let name = "Name to update";
-    console.log(name);
+    let index = users.findIndex(user => user === nameToUpdate);
+    if (index === -1) {
+        alert("Name not found.");
+        return;
+    }
 
+    editIndex = index;
+    create(); // Reuse the create() logic
 }
 
-function del(){
-    let name = "Name to delete";
-    console.log(name);
+// DELETE
+function del() {
+    let nameToDelete = prompt("Enter the name of the student to delete:");
 
+    let index = users.findIndex(user => user === nameToDelete);
+    if (index === -1) {
+        alert("Name not found.");
+        return;
+    }
+
+    users.splice(index, 1);
+    console.log(`Deleted "${nameToDelete}".`);
+    read();
 }
