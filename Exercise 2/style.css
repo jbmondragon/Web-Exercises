@@ -1,4 +1,12 @@
-.logo{
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Logo Navigation */
+.logo {
     width: 100%;
     height: 80px;
     display: flex;
@@ -6,32 +14,36 @@
     justify-content: center;
     gap: 20px;
     background-color: black;
-
 }
 
 .logo button {
     padding: 10px 20px;
     font-size: 16px;
     background-color: white;
-    color: darkcyan;
+    color: #f28b82;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    
 }
 
-.header{
+.logo button:hover {
+    background-color: #ffe7e0;
+}
+
+/* Header Section */
+.header {
     width: 100%;
     height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: darkcyan;
+    background-color: #f28b82;
+    color: #222;
 }
 
-.header-content{
+.header-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,7 +54,7 @@
     padding: 10px 20px;
     font-size: 16px;
     background-color: white;
-    color: darkcyan;
+    color: #f28b82;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -50,37 +62,55 @@
 }
 
 .header button:hover {
-    background-color: #ddd;
+    background-color: #ffe7e0;
 }
 
-.body{
+/* Wrapper (Optional section background) */
+.wrapper {
+    background-color: #f4f4f4;
+}
+
+/* Main Body Section */
+.body {
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    background-color: aquamarine;
+    background-color: #f4f4f4;
 }
 
-.top-body{
-    background-color: green;
+/* Top Section */
+.top-body {
+    background-color: black;
+    color: white;
+    height: 20vh;
     padding: 20px;
     text-align: center;
-}
-
-.bot-body-wrapper{
     display: flex;
-    flex:1;
-}
-
-.left-body, .right-body{
-    flex: 1;
-    background-color: peru;
-    text-align: center;
+    align-items: center;
     justify-content: center;
 }
 
-.footer{
+/* Bottom Split Section */
+.bot-body-wrapper {
+    display: flex;
+    flex: 1;
+}
+
+.left-body,
+.right-body {
+    flex: 1;
+    background-color: #f28b82;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer */
+.footer {
     width: 100%;
     height: 50vh;
     display: flex;
@@ -88,4 +118,24 @@
     justify-content: center;
     text-align: center;
     background-color: black;
+    color: white;
 }
+
+
+.glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    color: black;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+.glass:hover {
+    background: rgba(255, 255, 255, 0.4); /* brighter on hover */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
